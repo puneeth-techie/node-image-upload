@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import morgan from 'morgan'
 import notFound from '../middleware/notFound.js'
 import errorHandler from '../middleware/errorHandler.js'
+import fileUploadRoute from '../routes/fileUploadRouter.js'
 
 //dotenv config
 dotenv.config()
@@ -21,11 +22,13 @@ if(process.env.NODE_ENV === 'development'){
   app.use(morgan('dev'))
 }
 
+//Router handler
+app.use('/api/fileUpload', fileUploadRoute)
+
 //Not Found handler
-app.use(notFound())
+app.use(notFound)
 
 //error handler
-app.use(errorHandler())
-
+app.use(errorHandler)
 
 export default app
