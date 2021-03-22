@@ -14,4 +14,22 @@ const fileUpload = async (req, res, next) => {
       }
 }
 
-export default fileUpload;
+const getImages = async (req, res, next) => {
+    try{
+      const result = await ImageFile.find().select('userImage')
+      res.status(200)
+      //const view = result.userImage.split('\\')[2]
+      const response = {
+        viewImages: result.map(res => {
+          return {
+            ImageLink: `http://localhost:5000/${res.userImage.split('\\')[2]}`
+          }
+        })
+      }
+      res.send(response);
+    }catch(error){
+      createError(error)
+    }
+}
+
+export { fileUpload, getImages };

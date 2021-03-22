@@ -1,6 +1,6 @@
 import http from 'http'
 import app from './startup/app.js'
-//import connectDB from './startup/db.js'
+import connectDB from './startup/db.js'
 
 //creating server
 const server = http.createServer(app);
@@ -12,4 +12,4 @@ server.listen((port), () => {
 })
 
 //Init DB
-//connectDB()
+connectDB()

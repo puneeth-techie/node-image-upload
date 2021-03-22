@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 //public folder
-app.use(express.static('./public'))
+app.use(express.static('./public/uploads'))
 
 if(process.env.NODE_ENV === 'development'){
   app.use(morgan('dev'))
