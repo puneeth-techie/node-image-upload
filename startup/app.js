@@ -1,8 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
-import notFound from '../middleware/notFound.js'
-import errorHandler from '../middleware/errorHandler.js'
+import { notFound, errorHandler } from '../middleware/errorHandler.js'
 import fileUploadRoute from '../routes/fileUploadRouter.js'
 
 //dotenv config
