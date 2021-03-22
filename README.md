@@ -1,5 +1,3 @@
-### Project In Progress...
-
 # Image upload using node
 
 Image upload API using MULTER library. You can now easily upload and store the images in the MongoDB database.
